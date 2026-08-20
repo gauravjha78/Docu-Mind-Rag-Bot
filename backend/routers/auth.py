@@ -53,6 +53,8 @@ GOOGLE_CLIENT_ID=os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET=os.getenv("GOOGLE_CLIENT_SECRET")
 GOOGLE_REDIRECT_URL=os.getenv("GOOGLE_REDIRECT_URL")
 
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
+
 
 GOOGLE_AUTH_ENDPOINT="https://accounts.google.com/o/oauth2/v2/auth"
 GOOGLE_TOKEN_ENDPOINT="https://oauth2.googleapis.com/token"
@@ -142,7 +144,7 @@ async def authentication(
         )
 
         return RedirectResponse(
-            url=f"http://localhost:5173/upload?token={jwt_token}",
+            url=f"{FRONTEND_URL}/upload?token={jwt_token}",
             status_code=302
         )
 
