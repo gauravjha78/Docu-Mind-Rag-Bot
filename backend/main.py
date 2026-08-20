@@ -10,7 +10,8 @@ app.include_router(auth.router)
 app.include_router(chat.router)
 
 origins=[
-    "http://localhost:5173"   
+    "http://localhost:5173" ,
+    "https://docu-mind-rag-bot.vercel.app/"  ,
 ]
 
 app.add_middleware(
