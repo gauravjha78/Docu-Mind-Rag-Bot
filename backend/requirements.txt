@@ -17,3 +17,4 @@ sentence-transformers
 python-jose[cryptography]
 supabase
 python-multipart
+fastembed
